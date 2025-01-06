@@ -1,13 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simulation Starter</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
 <body>
-    <h1>Welcome to Simulation Starter</h1>
+    <h1>Simulation Starter</h1>
     <p>This page will soon host amazing simulations!</p>
+
+    <div id="simulation-setup">
+        <h2>Simulation Parameters</h2>
+        <label for="speed">Speed:</label>
+        <input type="range" id="speed" min="1" max="100" value="50">
+        <span id="speed-value">50</span>
+
+        <label for="mode">Mode:</label>
+        <select id="mode">
+            <option value="basic">Basic</option>
+            <option value="advanced">Advanced</option>
+        </select>
+
+        <button id="start-simulation">Start Simulation</button>
+    </div>
+
+    <p id="output"></p>
+
+    <script src="script.js"></script>
 </body>
-</html>
+
