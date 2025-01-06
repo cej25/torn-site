@@ -44,12 +44,16 @@ function createChart(data) {
 
 // Handle simulation start
 document.getElementById('start-simulation').addEventListener('click', () => {
-    const speed = speedInput.value;
-    const mode = document.getElementById('mode').value;
+    // Collect attributes
+    const strength = parseInt(document.getElementById('strength').value, 10);
+    const speed = parseInt(document.getElementById('speed-input').value, 10);
+    const defense = parseInt(document.getElementById('defense').value, 10);
+    const dexterity = parseInt(document.getElementById('dexterity').value, 10);
+    const life = parseInt(document.getElementById('life').value, 10);
 
     // Mock simulation data
-    const labels = ['Parameter 1', 'Parameter 2', 'Parameter 3', 'Parameter 4'];
-    const values = labels.map(() => Math.floor(Math.random() * speed)); // Generate random values based on speed
+    const labels = ['Strength', 'Speed', 'Defense', 'Dexterity', 'Life'];
+    const values = [strength, speed, defense, dexterity, life];
 
     // Update output text
     document.getElementById('output').textContent = `Simulation complete! Results are displayed below.`;
@@ -57,3 +61,4 @@ document.getElementById('start-simulation').addEventListener('click', () => {
     // Update the chart
     createChart({ labels, values });
 });
+
