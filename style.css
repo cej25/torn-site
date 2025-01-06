@@ -4,6 +4,30 @@ body {
     background-color: #f0f8ff;
     color: #333;
 }
+
 h1 {
     color: #007acc;
+}
+
+#simulation-setup {
+    margin: 20px auto;
+    max-width: 400px;
+    text-align: left;
+}
+
+label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+input, select, button {
+    margin: 5px 0 15px;
+    width: 100%;
+    padding: 8px;
+    font-size: 16px;
+}
+
+#chart-container {
+    margin: 30px auto;
+    max-width: 600px;
 }
