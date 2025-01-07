@@ -1,20 +1,3 @@
-// Handle slider updates
-const speedInput = document.getElementById('speed');
-const speedValue = document.getElementById('speed-value');
-
-speedInput.addEventListener('input', () => {
-    speedValue.textContent = speedInput.value; // Update displayed value
-});
-
-// Global chart variable
-let resultsChart;
-
-// Mock createChart function
-function createChart({ labels, values }) {
-    console.log("Chart data:", { labels, values });
-    document.getElementById('chart-container').textContent = `Chart Placeholder: ${values.join(', ')}`;
-}
-
 // Utility function to validate and adjust inputs
 function validateAndAdjust(value, defaultValue = 0) {
     if (isNaN(value) || value < 0) {
@@ -52,6 +35,18 @@ function getParameters(prefix) {
     };
 }
 
+// Mock createChart function
+function createChart({ labels, heroValues, villainValues }) {
+    console.log("Chart Data:", { labels, heroValues, villainValues });
+
+    // Display mock chart placeholder in the chart container
+    const chartContainer = document.getElementById('chart-container');
+    chartContainer.textContent = `
+        Mock Chart: 
+        Hero (${heroValues.join(', ')}), Villain (${villainValues.join(', ')})
+    `;
+}
+
 // Event listener for starting the simulation
 document.getElementById('start-simulation').addEventListener('click', () => {
     // Read Hero parameters
@@ -71,5 +66,23 @@ document.getElementById('start-simulation').addEventListener('click', () => {
         Check the console for detailed values.
     `;
 
-    // Future: Pass these parameters to a function for simulation or battle logic
+    // Prepare data for the mock chart
+    const labels = ['Strength', 'Speed', 'Defense', 'Dexterity', 'Life'];
+    const heroValues = [
+        heroParams.strength,
+        heroParams.speed,
+        heroParams.defense,
+        heroParams.dexterity,
+        heroParams.life
+    ];
+    const villainValues = [
+        villainParams.strength,
+        villainParams.speed,
+        villainParams.defense,
+        villainParams.dexterity,
+        villainParams.life
+    ];
+
+    // Render the mock chart
+    createChart({ labels, heroValues, villainValues });
 });
