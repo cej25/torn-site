@@ -12,15 +12,15 @@ body {
 #hero-villain-sections {
     display: flex;
     justify-content: space-around;
-    flex-wrap: wrap;
+    align-items: flex-start;
     margin: 20px;
     gap: 20px;
 }
 
 /* Individual Character Section Styling */
 .character-section {
-    width: 45%;
-    min-width: 300px;
+    flex: 1;
+    max-width: 45%;
     padding: 15px;
     border: 2px solid #ccc;
     border-radius: 8px;
@@ -46,16 +46,17 @@ h3 {
 
 /* Styling for Input Labels and Fields */
 label {
-    display: block;
+    display: inline-block;
     margin-top: 10px;
     font-weight: bold;
     font-size: 1rem;
     color: #333;
+    width: 100px; /* Ensures labels are aligned */
 }
 
 input {
-    margin-left: 10px;
-    width: 60%;
+    display: inline-block;
+    width: calc(100% - 120px);
     padding: 5px;
     font-size: 1rem;
     border: 1px solid #aaa;
@@ -71,6 +72,24 @@ input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
     -webkit-appearance: none;
     margin: 0;
+}
+
+/* Stat Passives Alignment */
+.stat-passives label {
+    display: inline-block;
+    width: auto;
+}
+
+.stat-passives input {
+    width: 70%;
+    display: inline-block;
+}
+
+.stat-passives span {
+    display: inline-block;
+    width: 10%;
+    text-align: right;
+    margin-left: 5px;
 }
 
 /* Chart Container Styling */
@@ -111,6 +130,6 @@ button:hover {
     }
 
     .character-section {
-        width: 80%;
+        max-width: 80%;
     }
 }
