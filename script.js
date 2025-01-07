@@ -86,3 +86,30 @@ document.getElementById('start-simulation').addEventListener('click', () => {
     // Render the mock chart
     createChart({ labels, heroValues, villainValues });
 });
+
+// Function to format the number with commas
+function formatNumberWithCommas(value) {
+    return value.replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+}
+
+// Function to handle input formatting
+function formatInputs() {
+    // Get all the input fields that should have formatted numbers
+    const numberInputs = document.querySelectorAll('input[type="number"]');
+    
+    numberInputs.forEach(input => {
+        input.addEventListener('input', function () {
+            // Remove any non-numeric characters (except commas)
+            let value = input.value.replace(/[^\d]/g, '');
+
+            // Format the number with commas
+            input.value = formatNumberWithCommas(value);
+        });
+    });
+}
+
+// Call the format function once the page loads
+window.onload = function() {
+    formatInputs();
+};
+
