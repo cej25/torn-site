@@ -9,38 +9,12 @@ speedInput.addEventListener('input', () => {
 // Global chart variable
 let resultsChart;
 
-// Function to create or update the chart
-function createChart(data) {
-    const ctx = document.getElementById('results-chart').getContext('2d');
-
-    // If a chart already exists, destroy it
-    if (resultsChart) {
-        resultsChart.destroy();
-    }
-
-    // Create a new chart
-    resultsChart = new Chart(ctx, {
-        type: 'bar', // Type of chart (e.g., bar, line, pie)
-        data: {
-            labels: data.labels, // Labels for the X-axis
-            datasets: [{
-                label: 'Simulation Results',
-                data: data.values, // Data points
-                backgroundColor: 'rgba(54, 162, 235, 0.5)',
-                borderColor: 'rgba(54, 162, 235, 1)',
-                borderWidth: 1
-            }]
-        },
-        options: {
-            responsive: true,
-            scales: {
-                y: {
-                    beginAtZero: true
-                }
-            }
-        }
-    });
+// Mock createChart function
+function createChart({ labels, values }) {
+    console.log("Chart data:", { labels, values });
+    document.getElementById('chart-container').textContent = `Chart Placeholder: ${values.join(', ')}`;
 }
+
 
 // Validate if the input is a number and adjust if necessary
 function validateAndAdjust(value, defaultValue = 0) {
