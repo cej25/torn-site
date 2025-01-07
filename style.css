@@ -125,7 +125,7 @@ button:hover {
 /* Responsive Design */
 @media screen and (max-width: 768px) {
     #hero-villain-sections {
-        flex-direction: column;
+        flex-direction: row;
         align-items: center;
     }
 
