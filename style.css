@@ -54,5 +54,27 @@ input, select, button {
     font-size: 16px;
 }
 
+#hero-villain-sections {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px;
+}
+
+#hero-section, #villain-section {
+    width: 45%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.battle-stats, .stat-passives {
+    margin-bottom: 20px;
+}
+
+h2, h3 {
+    text-align: center;
+}
+
 
 
