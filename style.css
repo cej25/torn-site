@@ -1,80 +1,116 @@
+/* General Page Styling */
 body {
     font-family: Arial, sans-serif;
-    text-align: center;
-    background-color: #f0f8ff;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
     color: #333;
+    line-height: 1.6;
 }
 
-h1 {
-    color: #007acc;
-}
-
-#simulation-setup {
-    margin: 20px auto;
-    max-width: 400px;
-    text-align: left;
-}
-
-label {
-    display: block;
-    margin: 10px 0 5px;
-}
-
-input, select, button {
-    margin: 5px 0 15px;
-    width: 100%;
-    padding: 8px;
-    font-size: 16px;
-}
-
-#chart-container {
-    margin: 30px auto;
-    max-width: 400px; /* Set maximum width */
-    height: auto;     /* Maintain aspect ratio */
-    border: 1px solid #ccc; /* Optional: Add a border for clarity */
-    padding: 10px;    /* Optional: Add padding for spacing */
-    background-color: #f9f9f9; /* Optional: Light background for contrast */
-}
-
-#attributes {
-    margin: 20px auto;
-    max-width: 400px;
-    text-align: left;
-}
-
-#attributes label {
-    display: block;
-    margin: 10px 0 5px;
-}
-
-#attributes input {
-    width: 100%;
-    padding: 8px;
-    margin-bottom: 15px;
-    font-size: 16px;
-}
-
+/* Container for Hero and Villain Sections */
 #hero-villain-sections {
     display: flex;
     justify-content: space-around;
+    flex-wrap: wrap;
     margin: 20px;
+    gap: 20px;
 }
 
-#hero-section, #villain-section {
+/* Individual Character Section Styling */
+.character-section {
     width: 45%;
-    padding: 10px;
-    border: 1px solid #ccc;
+    min-width: 300px;
+    padding: 15px;
+    border: 2px solid #ccc;
     border-radius: 8px;
     box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+    background-color: #f9f9f9;
 }
 
-.battle-stats, .stat-passives {
-    margin-bottom: 20px;
+/* Headings Styling */
+h2 {
+    text-align: center;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: #444;
 }
 
-h2, h3 {
+h3 {
+    font-size: 1.2rem;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    color: #666;
     text-align: center;
 }
 
+/* Styling for Input Labels and Fields */
+label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+    font-size: 1rem;
+    color: #333;
+}
 
+input {
+    margin-left: 10px;
+    width: 60%;
+    padding: 5px;
+    font-size: 1rem;
+    border: 1px solid #aaa;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
 
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+input[type="number"]::-webkit-inner-spin-button, 
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Chart Container Styling */
+#chart-container {
+    margin: 20px auto;
+    padding: 20px;
+    text-align: center;
+    border: 2px dashed #aaa;
+    border-radius: 8px;
+    background-color: #fff;
+    max-width: 800px;
+}
+
+/* Buttons Styling */
+button {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    #hero-villain-sections {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .character-section {
+        width: 80%;
+    }
+}
