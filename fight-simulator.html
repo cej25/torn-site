@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fight Simulator</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="fight-simulator.html">Fight Simulator</a></li>
+            <li><a href="weapon-comparisons.html">Weapon Comparisons</a></li>
+        </ul>
+    </nav>
+    <h1>Fight Simulator</h1>
+    <p>This page will soon host amazing simulations!</p>
+
+    <div id="simulation-setup">
+        <div id="hero-villain-sections">
+            <!-- Hero Section -->
+            <div id="hero-section" class="character-section">
+                <h2>Hero</h2>
+        
+                <!-- Battle Stats -->
+                <div class="battle-stats">
+                    <h3>Battle Stats</h3>
+                    <label for="hero-strength">Strength:</label>
+                    <input type="text" id="hero-strength" value="0">
+        
+                    <label for="hero-speed">Speed:</label>
+                    <input type="text" id="hero-speed" value="0">
+        
+                    <label for="hero-defense">Defense:</label>
+                    <input type="text" id="hero-defense" value="0">
+        
+                    <label for="hero-dexterity">Dexterity:</label>
+                    <input type="text" id="hero-dexterity" value="0">
+        
+                    <label for="hero-life">Life:</label>
+                    <input type="number" id="hero-life" value="100">
+                </div>
+        
+                <!-- Stat Passives -->
+                <div class="stat-passives">
+                    <h3>Stat Passives</h3>
+                    <label for="hero-strength-passive">Strength:</label>
+                    <input type="number" id="hero-strength-passive" value="0"> %
+        
+                    <label for="hero-speed-passive">Speed:</label>
+                    <input type="number" id="hero-speed-passive" value="0"> %
+        
+                    <label for="hero-defense-passive">Defense:</label>
+                    <input type="number" id="hero-defense-passive" value="0"> %
+        
+                    <label for="hero-dexterity-passive">Dexterity:</label>
+                    <input type="number" id="hero-dexterity-passive" value="0"> %
+                </div>
+            </div>
+        
+            <!-- Villain Section -->
+            <div id="villain-section" class="character-section">
+                <h2>Villain</h2>
+        
+                <!-- Battle Stats -->
+                <div class="battle-stats">
+                    <h3>Battle Stats</h3>
+                    <label for="villain-strength">Strength:</label>
+                    <input type="text" id="villain-strength" value="0">
+        
+                    <label for="villain-speed">Speed:</label>
+                    <input type="text" id="villain-speed" value="0">
+        
+                    <label for="villain-defense">Defense:</label>
+                    <input type="text" id="villain-defense" value="0">
+        
+                    <label for="villain-dexterity">Dexterity:</label>
+                    <input type="text" id="villain-dexterity" value="0">
+        
+                    <label for="villain-life">Life:</label>
+                    <input type="number" id="villain-life" value="100">
+                </div>
+        
+                <!-- Stat Passives -->
+                <div class="stat-passives">
+                    <h3>Stat Passives</h3>
+                    <label for="villain-strength-passive">Strength:</label>
+                    <input type="number" id="villain-strength-passive" value="0"> %
+        
+                    <label for="villain-speed-passive">Speed:</label>
+                    <input type="number" id="villain-speed-passive" value="0"> %
+        
+                    <label for="villain-defense-passive">Defense:</label>
+                    <input type="number" id="villain-defense-passive" value="0"> %
+        
+                    <label for="villain-dexterity-passive">Dexterity:</label>
+                    <input type="number" id="villain-dexterity-passive" value="0"> %
+                </div>
+            </div>
+        </div>
+        
+    </div>
+        
+        
+
+        <button id="start-simulation">Start Simulation</button>
+    </div>
+
+    <p id="output"></p>
+
+    <div id="chart-container">
+        <canvas id="results-chart" style="max-width: 100%; max-height: 300px;"></canvas>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
